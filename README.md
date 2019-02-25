@@ -1,5 +1,7 @@
 Skrrtesizer
 
+https://peaceful-fermat-80b4f5.netlify.com/
+
 This is a simple synth that right now does the sound "Skrrt" in one octave. Will implement tonejs to add other functionality and effects.
 
 
