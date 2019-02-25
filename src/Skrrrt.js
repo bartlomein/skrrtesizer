@@ -5,125 +5,125 @@ const B1 = posed.path({
   hidden: {
     fill: '#94B2FF',
     strokeDasharray: 500,
-    strokeWidth: 10,
+    strokeWidth: 70,
     strokeDashoffset: 50,
     stroke: '#94B2FF',
-    delay: 200,
-    transition: { duration: 5000, ease: 'anticipate' }
+
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
-    fill: '#fff',
+    fill: '#94B2FF',
     strokeDasharray: 500,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#94B2FF',
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const B2 = posed.path({
   hidden: {
     fill: '#94B2FF',
     strokeDasharray: 100,
-    strokeWidth: 20,
+    strokeWidth: 70,
     strokeDashoffset: 150,
     stroke: '#94B2FF',
-    delay: 400,
-    transition: { duration: 5000, ease: 'anticipate' }
+
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
-    fill: '#fff',
+    fill: '#94B2FF',
     strokeDasharray: 500,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#94B2FF',
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const B3 = posed.path({
   hidden: {
     fill: '#94B2FF',
     strokeDasharray: 100,
-    strokeWidth: 20,
+    strokeWidth: 70,
     strokeDashoffset: 150,
     stroke: '#94B2FF',
-    delay: 600,
-    transition: { duration: 5000, ease: 'anticipate' }
+
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
-    fill: '#fff',
+    fill: '#94B2FF',
     strokeDasharray: 500,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#94B2FF',
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const B4 = posed.path({
   hidden: {
     fill: '#94B2FF',
     strokeDasharray: 100,
-    strokeWidth: 20,
+    strokeWidth: 70,
     strokeDashoffset: 150,
     stroke: '#94B2FF',
-    delay: 800,
-    transition: { duration: 5000, ease: 'anticipate' }
+
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
-    fill: '#fff',
+    fill: '#94B2FF',
     strokeDasharray: 500,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#94B2FF',
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const B5 = posed.path({
   hidden: {
     fill: '#94B2FF',
     strokeDasharray: 100,
-    strokeWidth: 20,
+    strokeWidth: 70,
     strokeDashoffset: 150,
-    stroke: '#92FF',
-    delay: 1000,
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#94B2FF',
+
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
-    fill: '#fff',
+    fill: '#94B2FF',
     strokeDasharray: 500,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#94B2FF',
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const B6 = posed.path({
   hidden: {
     fill: '#94B2FF',
     strokeDasharray: 100,
-    strokeWidth: 20,
+    strokeWidth: 70,
     strokeDashoffset: 150,
     stroke: '#94B2FF',
-    delay: 1200,
-    transition: { duration: 5000, ease: 'anticipate' }
+
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
-    fill: '#fff',
+    fill: '#94B2FF',
     strokeDasharray: 500,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#94B2FF',
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const C1 = posed.path({
   hidden: {
     fill: '#fff',
-    stroke: '#FF009E',
-    delay: 200,
+    stroke: '#FFE74C',
+
     strokeDasharray: 10,
     strokeDashoffset: 10,
     strokeWidth: 10,
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
     fill: '#fff',
@@ -131,18 +131,18 @@ const C1 = posed.path({
     strokeDashoffset: 0,
     strokeWidth: 0,
     stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const C2 = posed.path({
   hidden: {
     fill: '#fff',
-    stroke: '#FF009E',
-    delay: 400,
+    stroke: '#FFE74C',
+
     strokeDasharray: 10,
     strokeDashoffset: 10,
     strokeWidth: 10,
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
     fill: '#fff',
@@ -150,18 +150,18 @@ const C2 = posed.path({
     strokeDashoffset: 10,
     strokeWidth: 0,
     stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const C3 = posed.path({
   hidden: {
     fill: '#fff',
-    stroke: '#FF009E',
+    stroke: '#FFE74C',
     strokeDasharray: 10,
-    delay: 600,
+
     strokeDashoffset: 10,
     strokeWidth: 10,
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
     fill: '#fff',
@@ -169,18 +169,18 @@ const C3 = posed.path({
     strokeDashoffset: 0,
     strokeWidth: 0,
     stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const C4 = posed.path({
   hidden: {
     fill: '#fff',
-    stroke: '#FF009E',
-    delay: 800,
+    stroke: '#FFE74C',
+
     strokeDasharray: 10,
     strokeDashoffset: 10,
     strokeWidth: 10,
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
     fill: '#fff',
@@ -188,18 +188,18 @@ const C4 = posed.path({
     strokeDashoffset: 0,
     strokeWidth: 0,
     stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const C5 = posed.path({
   hidden: {
     fill: '#fff',
-    stroke: '#FF009E',
-    delay: 1000,
+    stroke: '#FFE74C',
+
     strokeDasharray: 10,
     strokeDashoffset: 10,
     strokeWidth: 10,
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
     fill: '#fff',
@@ -207,18 +207,18 @@ const C5 = posed.path({
     strokeDashoffset: 0,
     strokeWidth: 0,
     stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const C6 = posed.path({
   hidden: {
     fill: '#fff',
-    stroke: '#FF009E',
-    delay: 1200,
+    stroke: '#FFE74C',
+
     strokeDasharray: 10,
     strokeDashoffset: 10,
     strokeWidth: 10,
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   visible: {
     fill: '#fff',
@@ -226,122 +226,122 @@ const C6 = posed.path({
     strokeDashoffset: 0,
     strokeWidth: 0,
     stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 
 const E1 = posed.path({
   visible: {
-    fill: '#fff',
+    fill: '#9FFFD2',
     strokeDasharray: 110,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#9FFFD2',
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   hidden: {
     fill: '#9FFFD2',
     strokeDasharray: 510,
-    delay: 200,
+
     strokeDashoffset: 520,
-    strokeWidth: 10,
+    strokeWidth: 50,
     stroke: '#9FFFD2',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const E2 = posed.path({
   visible: {
-    fill: '#fff',
+    fill: '#9FFFD2',
     strokeDasharray: 110,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#9FFFD2',
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   hidden: {
     fill: '#9FFFD2',
     strokeDasharray: 510,
-    delay: 400,
+
     strokeDashoffset: 520,
-    strokeWidth: 20,
+    strokeWidth: 50,
     stroke: '#9FFFD2',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const E3 = posed.path({
   visible: {
-    fill: '#fff',
+    fill: '#9FFFD2',
     strokeDasharray: 110,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#9FFFD2',
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   hidden: {
     fill: '#9FFFD2',
     strokeDasharray: 510,
-    delay: 600,
+
     strokeDashoffset: 520,
-    strokeWidth: 20,
+    strokeWidth: 50,
     stroke: '#9FFFD2',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const E4 = posed.path({
   visible: {
-    fill: '#fff',
+    fill: '#9FFFD2',
     strokeDasharray: 110,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#9FFFD2',
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   hidden: {
     fill: '#9FFFD2',
     strokeDasharray: 510,
-    delay: 800,
+
     strokeDashoffset: 520,
-    strokeWidth: 20,
+    strokeWidth: 40,
     stroke: '#9FFFD2',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const E5 = posed.path({
   visible: {
-    fill: '#fff',
+    fill: '#9FFFD2',
     strokeDasharray: 110,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#9FFFD2',
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   hidden: {
     fill: '#9FFFD2',
     strokeDasharray: 510,
-    delay: 1000,
+
     strokeDashoffset: 520,
-    strokeWidth: 20,
+    strokeWidth: 40,
     stroke: '#9FFFD2',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 const E6 = posed.path({
   visible: {
-    fill: '#fff',
+    fill: '#9FFFD2',
     strokeDasharray: 110,
     strokeDashoffset: 500,
     strokeWidth: 1,
-    stroke: '#fff',
-    transition: { duration: 5000, ease: 'anticipate' }
+    stroke: '#9FFFD2',
+    transition: { duration: 3000, ease: 'circInOut' }
   },
   hidden: {
     fill: '#9FFFD2',
     strokeDasharray: 510,
-    delay: 1200,
+
     strokeDashoffset: 520,
-    strokeWidth: 20,
+    strokeWidth: 40,
     stroke: '#9FFFD2',
-    transition: { duration: 5000, ease: 'anticipate' }
+    transition: { duration: 3000, ease: 'circInOut' }
   }
 });
 
@@ -355,7 +355,7 @@ class Skurrt extends React.Component {
       this.setState({
         isVisible: !this.state.isVisible
       });
-    }, 5000);
+    }, 3000);
   }
   render() {
     return (

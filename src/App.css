@@ -30,10 +30,35 @@
   width: 100%;
   position: absolute;
   top: 110px;
-  left: 480px;
+  left: 380px;
+  z-index: 50;
 }
 .Esizer {
   position: absolute;
-  left: 880px;
+  left: 780px;
   top: 120px;
+  z-index: 10;
+}
+
+@keyframes mymove {
+  0% {
+    transform: scale(1.05);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  75% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+.popUp {
+  animation-name: mymove;
+  animation-duration: 0.3s;
 }

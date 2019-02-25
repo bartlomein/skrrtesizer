@@ -21,14 +21,17 @@ class App extends React.Component {
   };
 
   playSound = e => {
+    console.log('here');
     const { fired } = this.state;
 
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
+    const skrrt = document.querySelector('.SkrrtAnimation');
 
     if (!audio) return;
     key.classList.add('playing');
     key.classList.add('active');
+    skrrt.classList.add('popUp');
     if (!fired) {
       this.setState(
         {
@@ -51,9 +54,10 @@ class App extends React.Component {
       },
       () => {
         const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
-
+        const skrrt = document.querySelector('.SkrrtAnimation');
         key.classList.remove('active');
         key.classList.remove('playing');
+        skrrt.classList.remove('popUp');
       }
     );
   };
