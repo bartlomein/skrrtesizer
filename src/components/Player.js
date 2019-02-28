@@ -10,6 +10,10 @@ export default class Player extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.returnSound();
+  }
+
   returnSound = () => {
     let player = new Tone.Player({
       url: this.props.sound,
@@ -17,11 +21,14 @@ export default class Player extends React.Component {
     }).toMaster();
     console.log(player);
     this.setState({ sample: player });
+    new Tone.Reverb([2]);
+
     return player;
   };
 
   render() {
     console.log('player');
-    return <div> {this.state.sample}</div>;
+    console.log(this.state.sample);
+    return <div />;
   }
 }

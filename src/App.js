@@ -23,24 +23,17 @@ class App extends React.Component {
     sound: null
   };
 
-  playSound = e => {
-    const { fired } = this.state;
-
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
-    const skrrt = document.querySelector('.SkrrtAnimation');
-
-    if (!audio) return;
-    key.classList.add('playing');
-    key.classList.add('active');
-    skrrt.classList.add('popUp');
-    if (!fired) {
-      this.setState({
-        fired: true,
-        sound: F
-      });
-    }
-    console.log(this.state.sound);
+  playSound = sound => {
+    this.setState(
+      {
+        sound
+      },
+      () => {
+        this.setState({
+          sound: null
+        });
+      }
+    );
   };
   removeTransition = e => {
     const { fired } = this.state;
@@ -62,6 +55,8 @@ class App extends React.Component {
   };
 
   render() {
+    const { fired, sound } = this.state;
+
     console.log('render');
     window.addEventListener('keydown', this.playSound);
     window.addEventListener('keyup', this.removeTransition);
@@ -77,9 +72,13 @@ class App extends React.Component {
         <div className="keys">
           <div className="piano">
             <ul className="set">
-              <li className="white f key" data-key="65">
+              <li
+                className="white f key"
+                data-key="65"
+                onClick={() => this.playSound(F)}
+              >
                 {/* <audio data-key="65" id="F" src={F} /> */}
-                <Player sound={F} />
+                {sound === F ? <Player sound={F} /> : null}
               </li>
               <li className="black fs key" data-key="87">
                 <audio id="Fsharp" src={Fsharp} data-key="87" />
