@@ -15,13 +15,15 @@ import E from './sounds/skrrt_E.mp3';
 import Skrrrt from './Skrrrt';
 import esizer from './img/1x/esizer.png';
 
+import Player from './components/Player.js';
+
 class App extends React.Component {
   state = {
-    fired: false
+    fired: false,
+    sound: null
   };
 
   playSound = e => {
-    console.log('here');
     const { fired } = this.state;
 
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -33,15 +35,12 @@ class App extends React.Component {
     key.classList.add('active');
     skrrt.classList.add('popUp');
     if (!fired) {
-      this.setState(
-        {
-          fired: true
-        },
-        () => {
-          audio.play();
-        }
-      );
+      this.setState({
+        fired: true,
+        sound: F
+      });
     }
+    console.log(this.state.sound);
   };
   removeTransition = e => {
     const { fired } = this.state;
@@ -63,6 +62,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log('render');
     window.addEventListener('keydown', this.playSound);
     window.addEventListener('keyup', this.removeTransition);
 
@@ -78,7 +78,8 @@ class App extends React.Component {
           <div className="piano">
             <ul className="set">
               <li className="white f key" data-key="65">
-                <audio data-key="65" id="F" src={F} />
+                {/* <audio data-key="65" id="F" src={F} /> */}
+                <Player sound={F} />
               </li>
               <li className="black fs key" data-key="87">
                 <audio id="Fsharp" src={Fsharp} data-key="87" />
