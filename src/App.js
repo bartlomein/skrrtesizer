@@ -15,12 +15,29 @@ import E from './sounds/skrrt_E.mp3';
 import Skrrrt from './Skrrrt';
 import esizer from './img/1x/esizer.png';
 
-import Player from './components/Player.js';
+import Player from './components/Player';
+import Reverb from './components/Reverb';
+import PingPongDelay from './components/PingPongDelay';
 
 class App extends React.Component {
   state = {
     fired: false,
-    sound: null
+    sound: null,
+    reverb: null,
+    delay: null
+  };
+
+  getReverb = obj => {
+    this.setState({
+      reverb: obj
+    });
+  };
+
+  getDelay = obj => {
+    this.setState({
+      delay: obj
+    });
+    console.log(this.state.delay);
   };
 
   playSound = sound => {
@@ -55,16 +72,14 @@ class App extends React.Component {
   };
 
   render() {
-    const { fired, sound } = this.state;
-
-    console.log('render');
-    window.addEventListener('keydown', this.playSound);
-    window.addEventListener('keyup', this.removeTransition);
+    const { sound, reverb, delay } = this.state;
 
     return (
       <div className="App">
         <div className="SkrrtAnimation">
           <Skrrrt />
+          <PingPongDelay getDelay={this.getDelay} />
+          <Reverb getReverb={this.getReverb} />
         </div>
         <div className="Esizer">
           <img src={esizer} alt="" />
@@ -78,10 +93,19 @@ class App extends React.Component {
                 onClick={() => this.playSound(F)}
               >
                 {/* <audio data-key="65" id="F" src={F} /> */}
-                {sound === F ? <Player sound={F} /> : null}
+                {sound === F ? (
+                  <Player sound={F} reverb={reverb} delay={delay} />
+                ) : null}
               </li>
-              <li className="black fs key" data-key="87">
-                <audio id="Fsharp" src={Fsharp} data-key="87" />
+              <li
+                className="black fs key"
+                data-key="87"
+                onClick={() => this.playSound(Fsharp)}
+              >
+                {sound === Fsharp ? (
+                  <Player sound={Fsharp} reverb={reverb} delay={delay} />
+                ) : null}
+                {/* <audio id="Fsharp" src={Fsharp} data-key="87" /> */}
               </li>
               <li className="white g key" data-key="83">
                 <audio id="G" src={G} data-key="83" />

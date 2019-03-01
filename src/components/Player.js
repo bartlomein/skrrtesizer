@@ -18,10 +18,12 @@ export default class Player extends React.Component {
     let player = new Tone.Player({
       url: this.props.sound,
       autostart: true
-    }).toMaster();
+    })
+      .toMaster()
+      .connect(this.props.reverb)
+      .connect(this.props.delay);
     console.log(player);
     this.setState({ sample: player });
-    new Tone.Reverb([2]);
 
     return player;
   };
