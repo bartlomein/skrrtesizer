@@ -7,7 +7,7 @@ export default class PingPongDelay extends React.Component {
   }
 
   returnPingPong() {
-    var pingPong = new Tone.PingPongDelay('16', 0.6).toMaster();
+    var pingPong = new Tone.PingPongDelay('0', 0.6).toMaster();
     this.props.getDelay(pingPong);
     return pingPong;
   }

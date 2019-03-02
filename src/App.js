@@ -18,13 +18,79 @@ import esizer from './img/1x/esizer.png';
 import Player from './components/Player';
 import Reverb from './components/Reverb';
 import PingPongDelay from './components/PingPongDelay';
+import BitCrusher from './components/BitCrusher';
+import Phaser from './components/Phaser';
 
 class App extends React.Component {
   state = {
     fired: false,
     sound: null,
     reverb: null,
-    delay: null
+    delay: null,
+    crusher: null,
+    phaser: null
+  };
+
+  componentWillMount() {
+    window.addEventListener('keydown', this.playSoundOnKeyboard);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('keydown');
+  }
+
+  playSoundOnKeyboard = e => {
+    console.log(e.key);
+    const { sound, reverb, delay, crusher, phaser } = this.state;
+
+    const { fired } = this.state;
+
+    // const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
+    // const skrrt = document.querySelector('.SkrrtAnimation');
+
+    if (!fired) {
+      this.setState({
+        fired: true
+      });
+    }
+    if (e.key === 'a')
+      this.setState(
+        {
+          sound: F
+        },
+        () => {
+          this.setState({
+            sound: null
+          });
+        }
+      );
+    else if (e.key === 'w') {
+      this.setState(
+        {
+          sound: Fsharp
+        },
+        () => {
+          this.setState({
+            sound: null
+          });
+        }
+      );
+    }
+    console.log(sound);
+    return (
+      <Player
+        sound={sound}
+        reverb={reverb}
+        delay={delay}
+        crusher={crusher}
+        phaser={phaser}
+      />
+    );
+  };
+
+  getPhaser = obj => {
+    this.setState({
+      phaser: obj
+    });
   };
 
   getReverb = obj => {
@@ -33,11 +99,16 @@ class App extends React.Component {
     });
   };
 
+  getBitCrusher = obj => {
+    this.setState({
+      crusher: obj
+    });
+  };
+
   getDelay = obj => {
     this.setState({
       delay: obj
     });
-    console.log(this.state.delay);
   };
 
   playSound = sound => {
@@ -72,7 +143,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { sound, reverb, delay } = this.state;
+    const { sound, reverb, delay, crusher, phaser } = this.state;
 
     return (
       <div className="App">
@@ -80,6 +151,8 @@ class App extends React.Component {
           <Skrrrt />
           <PingPongDelay getDelay={this.getDelay} />
           <Reverb getReverb={this.getReverb} />
+          <BitCrusher getBitCrusher={this.getBitCrusher} crushNumber={8} />
+          <Phaser getPhaser={this.getPhaser} />
         </div>
         <div className="Esizer">
           <img src={esizer} alt="" />
@@ -91,19 +164,33 @@ class App extends React.Component {
                 className="white f key"
                 data-key="65"
                 onClick={() => this.playSound(F)}
+                onKeyDown={() => this.playSoundOnKeyboard}
               >
                 {/* <audio data-key="65" id="F" src={F} /> */}
                 {sound === F ? (
-                  <Player sound={F} reverb={reverb} delay={delay} />
+                  <Player
+                    sound={F}
+                    reverb={reverb}
+                    delay={delay}
+                    crusher={crusher}
+                    phaser={phaser}
+                  />
                 ) : null}
               </li>
               <li
                 className="black fs key"
                 data-key="87"
                 onClick={() => this.playSound(Fsharp)}
+                onKeyDown={() => this.playSoundOnKeyboard}
               >
                 {sound === Fsharp ? (
-                  <Player sound={Fsharp} reverb={reverb} delay={delay} />
+                  <Player
+                    sound={Fsharp}
+                    reverb={reverb}
+                    delay={delay}
+                    crusher={crusher}
+                    phaser={phaser}
+                  />
                 ) : null}
                 {/* <audio id="Fsharp" src={Fsharp} data-key="87" /> */}
               </li>

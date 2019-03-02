@@ -15,22 +15,24 @@ export default class Player extends React.Component {
   }
 
   returnSound = () => {
+    const { sound, crusher, delay, reverb, phaser } = this.props;
+
     let player = new Tone.Player({
-      url: this.props.sound,
+      url: sound,
       autostart: true
     })
-      .toMaster()
-      .connect(this.props.reverb)
-      .connect(this.props.delay);
-    console.log(player);
+      .connect(crusher)
+      .connect(delay)
+      .connect(reverb)
+      .connect(phaser)
+      .toMaster();
+    console.log(phaser);
     this.setState({ sample: player });
 
     return player;
   };
 
   render() {
-    console.log('player');
-    console.log(this.state.sample);
     return <div />;
   }
 }
