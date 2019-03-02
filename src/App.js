@@ -197,7 +197,7 @@ class App extends React.Component {
         <div className="SkrrtAnimation">
           <Skrrrt />
         </div>
-        <PingPongDelay getDelay={this.getDelay} />
+        <PingPongDelay getDelay={this.getDelay} time="8n" wet={0.5} />
         <Reverb getReverb={this.getReverb} />
         <BitCrusher getBitCrusher={this.getBitCrusher} crushNumber={8} />
         <Phaser getPhaser={this.getPhaser} />
