@@ -30,12 +30,12 @@
   width: 100%;
   position: absolute;
   top: 110px;
-  left: 550px;
+  left: 400px;
   z-index: 50;
 }
 .Esizer {
   position: absolute;
-  left: 950px;
+  left: 800px;
   top: 120px;
   z-index: 10;
 }
