@@ -37,10 +37,10 @@ class App extends React.Component {
   }
   componentWillUnmount() {
     window.removeEventListener('keydown');
+    window.removeEventListener('keyup');
   }
 
   playSoundOnKeyboard = e => {
-    console.log(e.key);
     const { sound, reverb, delay, crusher, phaser } = this.state;
     const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
     const skrrt = document.querySelector('.SkrrtAnimation');
@@ -211,86 +211,62 @@ class App extends React.Component {
                 className="white f key"
                 data-key="65"
                 onClick={() => this.playSound(F)}
-              >
-                {/* <audio data-key="65" id="F" src={F} /> */}
-              </li>
+              />
               <li
                 className="black fs key"
                 data-key="87"
                 onClick={() => this.playSound(Fsharp)}
-              >
-                {/* <audio id="Fsharp" src={Fsharp} data-key="87" /> */}
-              </li>
+              />
               <li
                 className="white g key"
                 data-key="83"
                 onClick={() => this.playSound(G)}
-              >
-                {/* <audio id="G" src={G} data-key="83" /> */}
-              </li>
+              />
               <li
                 className="black gs key"
                 data-key="69"
                 onClick={() => this.playSound(Gsharp)}
-              >
-                <audio data-key="69" id="Gsharp" src={Gsharp} />
-              </li>
+              />
               <li
                 className="white a key"
                 data-key="68"
                 onClick={() => this.playSound(A)}
-              >
-                <audio data-key="68" id="A" src={A} />
-              </li>
+              />
               <li
                 className="black as key"
                 data-key="82"
                 onClick={() => this.playSound(Asharp)}
-              >
-                <audio id="Asharp" src={Asharp} data-key="82" />
-              </li>
+              />
               <li
                 className="white b key f"
                 data-key="70"
                 onClick={() => this.playSound(B)}
-              >
-                <audio data-key="70" id="B" src={B} />
-              </li>
+              />
               <li
                 className="white e key"
                 data-key="71"
                 onClick={() => this.playSound(C)}
-              >
-                <audio id="C" src={C} data-key="71" />
-              </li>
+              />
               <li
                 className="black ds key"
                 data-key="89"
                 onClick={() => this.playSound(Csharp)}
-              >
-                <audio id="Csharp" src={Csharp} data-key="89" />
-              </li>
+              />
               <li
                 className="white d key"
                 data-key="72"
                 onClick={() => this.playSound(D)}
-              >
-                <audio id="D" src={D} data-key="72" />
-              </li>
+              />
               <li
                 className="black cs key"
                 data-key="85"
                 onClick={() => this.playSound(Dsharp)}
-              >
-                <audio id="Dsharp" src={Dsharp} data-key="85" />
-              </li>
+              />
               <li
                 className="white c key"
                 data-key="74"
                 onClick={() => this.playSound(E)}
-              >
-                <audio id="E" src={E} data-key="74" />
-              </li>
+              />
             </ul>
           </div>
         </div>
