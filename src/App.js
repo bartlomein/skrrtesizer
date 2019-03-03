@@ -17,7 +17,7 @@ import esizer from './img/1x/esizer.png';
 
 import Player from './components/Player';
 import Reverb from './components/Reverb';
-import PingPongDelay from './components/PingPongDelay';
+import PingPongDelayContainer from './containers/PingPongDelayContainer';
 import BitCrusher from './components/BitCrusher';
 import Phaser from './components/Phaser';
 
@@ -27,6 +27,8 @@ class App extends React.Component {
     sound: null,
     reverb: null,
     delay: null,
+    delaySpeed: 0,
+    delayFeedback: 0,
     crusher: null,
     phaser: null
   };
@@ -39,6 +41,12 @@ class App extends React.Component {
     window.removeEventListener('keydown');
     window.removeEventListener('keyup');
   }
+
+  returnDelayTimeValue = time => {
+    this.setState({
+      delaySpeed: time
+    });
+  };
 
   playSoundOnKeyboard = e => {
     const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
@@ -197,23 +205,39 @@ class App extends React.Component {
   };
 
   render() {
-    const { sound, reverb, delay, crusher, phaser } = this.state;
+    const {
+      sound,
+      reverb,
+      delay,
+      phaser,
+      delaySpeed,
+      delayFeedback
+    } = this.state;
 
     return (
       <div className="App">
         {sound !== null ? (
           <Player sound={sound} reverb={reverb} delay={delay} phaser={phaser} />
         ) : null}
-        <div className="SkrrtAnimation">
-          <Skrrrt />
-        </div>
-        <PingPongDelay getDelay={this.getDelay} time="0" wet={0.5} />
+
+        <PingPongDelayContainer
+          getDelay={this.getDelay}
+          time={delaySpeed}
+          feedback={delayFeedback}
+          returnDelayTimeValue={this.returnDelayTimeValue}
+        />
         <Reverb getReverb={this.getReverb} />
 
         <Phaser getPhaser={this.getPhaser} />
-        <div className="Esizer">
-          <img src={esizer} alt="" />
+        <div className="synth-logo">
+          <div className="skrrt-animation">
+            <Skrrrt />
+          </div>
+          <div className="esizer">
+            <img src={esizer} alt="" />
+          </div>
         </div>
+
         <div className="keys">
           <div className="piano">
             <ul className="set">

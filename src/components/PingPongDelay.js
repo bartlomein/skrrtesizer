@@ -1,18 +1,19 @@
 import React from 'react';
-import Tone from 'tone';
-
+import Slider from 'rc-slider';
 export default class PingPongDelay extends React.Component {
-  componentDidMount() {
-    this.returnPingPong();
-  }
-
-  returnPingPong() {
-    const { time, wet, getDelay } = this.props;
-    let pingPong = new Tone.PingPongDelay(time, wet).toMaster();
-    getDelay(pingPong);
-    return pingPong;
-  }
   render() {
-    return <div />;
+    const { time, feedback } = this.props;
+    return (
+      <div>
+        <div className="time-slider">
+          <Slider
+            maxValue={16}
+            minValue={0}
+            value={time}
+            handle={() => this.returnDelayTimeValue}
+          />
+        </div>
+      </div>
+    );
   }
 }

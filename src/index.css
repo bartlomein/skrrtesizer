@@ -21,11 +21,10 @@ body {
   margin: 0;
   background: #afe0ce;
 }
-ul {
+.set {
   height: 30.875em;
-  width: 40em;
-  margin: 5em auto;
-  padding: 10em 0 0 3em;
+  margin: 0 auto;
+
   position: relative;
   border: 1px solid #160801;
   border-radius: 1em;
