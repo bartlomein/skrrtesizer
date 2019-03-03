@@ -41,7 +41,6 @@ class App extends React.Component {
   }
 
   playSoundOnKeyboard = e => {
-    const { sound, reverb, delay, crusher, phaser } = this.state;
     const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
     const skrrt = document.querySelector('.SkrrtAnimation');
 
@@ -108,7 +107,7 @@ class App extends React.Component {
         sound: keySound
       },
       () => {
-        console.log(sound);
+        console.log(this.state.sound);
         this.setState({
           sound: null
         });
@@ -140,7 +139,10 @@ class App extends React.Component {
     });
   };
 
-  playSound = sound => {
+  playSound = (sound, key) => {
+    const clickedKey = document.querySelector(`li[data-key="${key}"]`);
+    console.log(key);
+
     this.setState(
       {
         sound
@@ -186,20 +188,14 @@ class App extends React.Component {
     return (
       <div className="App">
         {sound !== null ? (
-          <Player
-            sound={sound}
-            reverb={reverb}
-            delay={delay}
-            crusher={crusher}
-            phaser={phaser}
-          />
+          <Player sound={sound} reverb={reverb} delay={delay} phaser={phaser} />
         ) : null}
         <div className="SkrrtAnimation">
           <Skrrrt />
         </div>
-        <PingPongDelay getDelay={this.getDelay} time="8n" wet={0.5} />
+        <PingPongDelay getDelay={this.getDelay} time="0" wet={0.5} />
         <Reverb getReverb={this.getReverb} />
-        <BitCrusher getBitCrusher={this.getBitCrusher} crushNumber={8} />
+
         <Phaser getPhaser={this.getPhaser} />
         <div className="Esizer">
           <img src={esizer} alt="" />
@@ -210,7 +206,7 @@ class App extends React.Component {
               <li
                 className="white f key"
                 data-key="65"
-                onClick={() => this.playSound(F)}
+                onClick={() => this.playSound(F, 65)}
               />
               <li
                 className="black fs key"
