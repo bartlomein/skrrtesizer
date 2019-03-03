@@ -107,7 +107,6 @@ class App extends React.Component {
         sound: keySound
       },
       () => {
-        console.log(this.state.sound);
         this.setState({
           sound: null
         });
@@ -141,7 +140,10 @@ class App extends React.Component {
 
   playSound = (sound, key) => {
     const clickedKey = document.querySelector(`li[data-key="${key}"]`);
-    console.log(key);
+    console.log(clickedKey);
+
+    clickedKey.classList.add('playing');
+    clickedKey.classList.add('active');
 
     this.setState(
       {
@@ -155,6 +157,18 @@ class App extends React.Component {
       }
     );
   };
+
+  onMouseRelease = key => {
+    const clickedKey = document.querySelector(`li[data-key="${key}"]`);
+    console.log(clickedKey);
+    if (clickedKey.classList.contains('playing')) {
+      clickedKey.classList.remove('playing');
+    }
+    if (clickedKey.classList.contains('active')) {
+      clickedKey.classList.remove('active');
+    }
+  };
+
   removeTransition = e => {
     const { fired } = this.state;
 
@@ -206,62 +220,74 @@ class App extends React.Component {
               <li
                 className="white f key"
                 data-key="65"
-                onClick={() => this.playSound(F, 65)}
+                onMouseDown={() => this.playSound(F, 65)}
+                onMouseUp={() => this.onMouseRelease(65)}
               />
               <li
                 className="black fs key"
                 data-key="87"
-                onClick={() => this.playSound(Fsharp)}
+                onMouseDown={() => this.playSound(Fsharp, 87)}
+                onMouseUp={() => this.onMouseRelease(87)}
               />
               <li
                 className="white g key"
                 data-key="83"
-                onClick={() => this.playSound(G)}
+                onMouseDown={() => this.playSound(G, 83)}
+                onMouseUp={() => this.onMouseRelease(83)}
               />
               <li
                 className="black gs key"
                 data-key="69"
-                onClick={() => this.playSound(Gsharp)}
+                onMouseDown={() => this.playSound(Gsharp, 69)}
+                onMouseUp={() => this.onMouseRelease(69)}
               />
               <li
                 className="white a key"
                 data-key="68"
-                onClick={() => this.playSound(A)}
+                onMouseDown={() => this.playSound(A, 68)}
+                onMouseUp={() => this.onMouseRelease(68)}
               />
               <li
                 className="black as key"
                 data-key="82"
-                onClick={() => this.playSound(Asharp)}
+                onMouseDown={() => this.playSound(Asharp, 82)}
+                onMouseUp={() => this.onMouseRelease(82)}
               />
               <li
                 className="white b key f"
                 data-key="70"
-                onClick={() => this.playSound(B)}
+                onMouseDown={() => this.playSound(B, 70)}
+                onMouseUp={() => this.onMouseRelease(70)}
               />
               <li
                 className="white e key"
                 data-key="71"
-                onClick={() => this.playSound(C)}
+                onMouseDown={() => this.playSound(C, 71)}
+                onMouseUp={() => this.onMouseRelease(71)}
               />
               <li
                 className="black ds key"
                 data-key="89"
-                onClick={() => this.playSound(Csharp)}
+                onMouseDown={() => this.playSound(Csharp, 89)}
+                onMouseUp={() => this.onMouseRelease(89)}
               />
               <li
                 className="white d key"
                 data-key="72"
-                onClick={() => this.playSound(D)}
+                onMouseDown={() => this.playSound(D, 72)}
+                onMouseUp={() => this.onMouseRelease(72)}
               />
               <li
                 className="black cs key"
                 data-key="85"
-                onClick={() => this.playSound(Dsharp)}
+                onMouseDown={() => this.playSound(Dsharp, 85)}
+                onMouseUp={() => this.onMouseRelease(85)}
               />
               <li
                 className="white c key"
                 data-key="74"
-                onClick={() => this.playSound(E)}
+                onMouseDown={() => this.playSound(E, 74)}
+                onMouseUp={() => this.onMouseRelease(74)}
               />
             </ul>
           </div>
