@@ -1,7 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class RangeSlider extends React.Component {
+import Slider from '@material-ui/lab/Slider';
+
+class RangeSlider extends React.Component {
   render() {
-    return <div />;
+    const { min, max, value, handleChange, step } = this.props;
+
+    return (
+      <div className="range-slider">
+        <Slider
+          min={min}
+          max={max}
+          value={value}
+          step={step}
+          onChange={handleChange}
+        />
+      </div>
+    );
   }
 }
+
+export default RangeSlider;

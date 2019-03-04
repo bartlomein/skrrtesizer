@@ -13,9 +13,12 @@ export default class Player extends React.Component {
   componentDidMount() {
     this.returnSound();
   }
+  componentDidUpdate() {
+    this.returnSound();
+  }
 
   returnSound = () => {
-    const { sound, crusher, delay, reverb, phaser } = this.props;
+    const { sound, delay, reverb, phaser } = this.props;
 
     let player = new Tone.Player({
       url: sound,
@@ -32,6 +35,8 @@ export default class Player extends React.Component {
   };
 
   render() {
+    console.log('render in');
+
     return <div />;
   }
 }

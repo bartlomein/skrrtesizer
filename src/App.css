@@ -60,3 +60,9 @@
   animation-name: mymove;
   animation-duration: 0.3s;
 }
+
+/*EFFECT COMPONENTS*/
+.ping-pong-delay-component {
+  width: 100%;
+  max-width: 300px;
+}

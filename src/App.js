@@ -28,7 +28,7 @@ class App extends React.Component {
     reverb: null,
     delay: null,
     delaySpeed: 0,
-    delayFeedback: 0,
+    delayFeedback: 0.8,
     crusher: null,
     phaser: null
   };
@@ -42,15 +42,20 @@ class App extends React.Component {
     window.removeEventListener('keyup');
   }
 
-  returnDelayTimeValue = time => {
+  returnDelayTimeValue = (event, time) => {
     this.setState({
       delaySpeed: time
+    });
+  };
+  returnFeedbackValue = (event, feedback) => {
+    this.setState({
+      delayFeedback: feedback
     });
   };
 
   playSoundOnKeyboard = e => {
     const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
-    const skrrt = document.querySelector('.SkrrtAnimation');
+    const skrrt = document.querySelector('.skrrt-animation');
 
     const { fired } = this.state;
 
@@ -141,6 +146,8 @@ class App extends React.Component {
   };
 
   getDelay = obj => {
+    console.log('getdelay');
+
     this.setState({
       delay: obj
     });
@@ -168,7 +175,7 @@ class App extends React.Component {
 
   onMouseRelease = key => {
     const clickedKey = document.querySelector(`li[data-key="${key}"]`);
-    console.log(clickedKey);
+
     if (clickedKey.classList.contains('playing')) {
       clickedKey.classList.remove('playing');
     }
@@ -189,7 +196,7 @@ class App extends React.Component {
       },
       () => {
         const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
-        const skrrt = document.querySelector('.SkrrtAnimation');
+        const skrrt = document.querySelector('.skrrt-animation');
         console.log(key);
         if (key && key.classList.contains('active')) {
           key.classList.remove('active');
@@ -220,12 +227,6 @@ class App extends React.Component {
           <Player sound={sound} reverb={reverb} delay={delay} phaser={phaser} />
         ) : null}
 
-        <PingPongDelayContainer
-          getDelay={this.getDelay}
-          time={delaySpeed}
-          feedback={delayFeedback}
-          returnDelayTimeValue={this.returnDelayTimeValue}
-        />
         <Reverb getReverb={this.getReverb} />
 
         <Phaser getPhaser={this.getPhaser} />
@@ -237,7 +238,13 @@ class App extends React.Component {
             <img src={esizer} alt="" />
           </div>
         </div>
-
+        <PingPongDelayContainer
+          getDelay={this.getDelay}
+          time={delaySpeed}
+          feedback={delayFeedback}
+          returnDelayTimeValue={this.returnDelayTimeValue}
+          returnFeedbackValue={this.returnFeedbackValue}
+        />
         <div className="keys">
           <div className="piano">
             <ul className="set">
