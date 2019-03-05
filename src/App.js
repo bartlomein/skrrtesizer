@@ -25,6 +25,8 @@ class App extends React.Component {
   state = {
     fired: false,
     sound: null,
+    sound2: null,
+    sound3: null,
     reverb: null,
     delay: null,
     delaySpeed: 0,
@@ -54,6 +56,7 @@ class App extends React.Component {
   };
 
   playSoundOnKeyboard = e => {
+    const { sound, sound2, sound3 } = this.state;
     const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
     const skrrt = document.querySelector('.skrrt-animation');
 

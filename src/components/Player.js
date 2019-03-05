@@ -35,8 +35,6 @@ export default class Player extends React.Component {
   };
 
   render() {
-    console.log('render in');
-
     return <div />;
   }
 }
