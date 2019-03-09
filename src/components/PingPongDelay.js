@@ -12,7 +12,7 @@ export default class PingPongDelay extends React.Component {
 
     return (
       <div className="ping-pong-delay-component effect-component">
-        <div className="delay-name">Ping Pong Delay</div>
+        <div className="delay-name effect-name">Ping Pong Delay</div>
         <div className="time-slider">
           <span className="effect-property-name">Time: </span>
           <span className="ping-pong-time-display">{time}</span>

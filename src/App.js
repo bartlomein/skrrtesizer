@@ -29,6 +29,8 @@ class App extends React.Component {
     sound2: null,
     sound3: null,
     reverb: null,
+    reverbRoomSize: 0,
+    reverbFrequency: 2000,
     delay: null,
     delaySpeed: 0,
     delayFeedback: 0.8,
@@ -53,6 +55,16 @@ class App extends React.Component {
   returnFeedbackValue = (event, feedback) => {
     this.setState({
       delayFeedback: feedback
+    });
+  };
+  returnRoomSizeReverbValue = (event, roomSize) => {
+    this.setState({
+      reverbRoomSize: roomSize
+    });
+  };
+  returnReverbFrequencyValue = (event, frequency) => {
+    this.setState({
+      reverbFrequency: frequency
     });
   };
 
@@ -216,6 +228,8 @@ class App extends React.Component {
     const {
       sound,
       reverb,
+      reverbRoomSize,
+      reverbFrequency,
       delay,
       phaser,
       delaySpeed,
@@ -228,8 +242,6 @@ class App extends React.Component {
           <Player sound={sound} reverb={reverb} delay={delay} phaser={phaser} />
         ) : null}
 
-        <ReverbContainer getReverb={this.getReverb} />
-
         <Phaser getPhaser={this.getPhaser} />
         <div className="synth-logo">
           <div className="skrrt-animation">
@@ -239,13 +251,22 @@ class App extends React.Component {
             <img src={esizer} alt="" />
           </div>
         </div>
-        <PingPongDelayContainer
-          getDelay={this.getDelay}
-          time={delaySpeed}
-          feedback={delayFeedback}
-          returnDelayTimeValue={this.returnDelayTimeValue}
-          returnFeedbackValue={this.returnFeedbackValue}
-        />
+        <div className="effect-line first-effect-line">
+          <PingPongDelayContainer
+            getDelay={this.getDelay}
+            time={delaySpeed}
+            feedback={delayFeedback}
+            returnDelayTimeValue={this.returnDelayTimeValue}
+            returnFeedbackValue={this.returnFeedbackValue}
+          />
+          <ReverbContainer
+            getReverb={this.getReverb}
+            returnRoomSizeReverbValue={this.returnRoomSizeReverbValue}
+            returnReverbFrequencyValue={this.returnReverbFrequencyValue}
+            roomSize={reverbRoomSize}
+            frequency={reverbFrequency}
+          />
+        </div>
         <div className="keys">
           <div className="piano">
             <ul className="set">
