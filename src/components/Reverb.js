@@ -20,7 +20,7 @@ export default class Reverb extends React.Component {
             aria-labelledby="time"
             handleChange={returnRoomSizeReverbValue}
             min={0}
-            max={1}
+            max={0.99}
             step={0.01}
           />
         </div>

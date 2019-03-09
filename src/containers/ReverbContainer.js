@@ -6,12 +6,26 @@ export default class ReverbContainer extends React.Component {
   componentDidMount() {
     this.returnReverb();
   }
+  componentDidUpdate(prevProps) {
+    const { roomSize, frequency } = this.props;
+    if (prevProps.roomSize !== roomSize || prevProps.frequency !== frequency) {
+      let freeverb = new Tone.Freeverb().toMaster();
+      freeverb.dampening.value = frequency;
+      freeverb.roomSize.value = roomSize;
+
+      this.props.getReverb(freeverb);
+    }
+  }
 
   returnReverb() {
     const { roomSize, frequency } = this.props;
-    let freeverb = new Tone.Freeverb(roomSize, frequency).toMaster();
-
+    let freeverb = new Tone.Freeverb().toMaster();
+    freeverb.dampening.value = frequency;
+    freeverb.roomSize.value = roomSize;
     this.props.getReverb(freeverb);
+    freeverb.toMaster();
+    console.log(freeverb);
+
     return freeverb;
   }
   render() {

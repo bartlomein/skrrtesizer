@@ -22,7 +22,7 @@ export default class PingPongDelayContainer extends React.Component {
 
   convertPingPongTime = oldTime => {
     let newTime = 1;
-    console.log(newTime);
+
     if (oldTime === 1) {
       newTime = 1;
     } else if (oldTime % 2 === 1) {
