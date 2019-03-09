@@ -16,9 +16,10 @@ import Skrrrt from './Skrrrt';
 import esizer from './img/1x/esizer.png';
 
 import Player from './components/Player';
-import Reverb from './components/Reverb';
+
+import ReverbContainer from './containers/ReverbContainer';
 import PingPongDelayContainer from './containers/PingPongDelayContainer';
-import BitCrusher from './components/BitCrusher';
+
 import Phaser from './components/Phaser';
 
 class App extends React.Component {
@@ -149,8 +150,6 @@ class App extends React.Component {
   };
 
   getDelay = obj => {
-    console.log('getdelay');
-
     this.setState({
       delay: obj
     });
@@ -158,7 +157,6 @@ class App extends React.Component {
 
   playSound = (sound, key) => {
     const clickedKey = document.querySelector(`li[data-key="${key}"]`);
-    console.log(clickedKey);
 
     clickedKey.classList.add('playing');
     clickedKey.classList.add('active');
@@ -200,7 +198,7 @@ class App extends React.Component {
       () => {
         const key = document.querySelector(`li[data-key="${e.keyCode}"]`);
         const skrrt = document.querySelector('.skrrt-animation');
-        console.log(key);
+
         if (key && key.classList.contains('active')) {
           key.classList.remove('active');
         }
@@ -230,7 +228,7 @@ class App extends React.Component {
           <Player sound={sound} reverb={reverb} delay={delay} phaser={phaser} />
         ) : null}
 
-        <Reverb getReverb={this.getReverb} />
+        <ReverbContainer getReverb={this.getReverb} />
 
         <Phaser getPhaser={this.getPhaser} />
         <div className="synth-logo">

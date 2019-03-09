@@ -62,6 +62,15 @@
 }
 
 /*EFFECT COMPONENTS*/
+.effect-component {
+  border: 2px solid pink;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  background: white;
+  box-shadow: 10px 20px 20px gray;
+}
+
 .ping-pong-delay-component {
   width: 100%;
   max-width: 300px;
