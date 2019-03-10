@@ -24,7 +24,6 @@ export default class ReverbContainer extends React.Component {
     freeverb.roomSize.value = roomSize;
     this.props.getReverb(freeverb);
     freeverb.toMaster();
-    console.log(freeverb);
 
     return freeverb;
   }

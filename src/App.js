@@ -19,8 +19,7 @@ import Player from './components/Player';
 
 import ReverbContainer from './containers/ReverbContainer';
 import PingPongDelayContainer from './containers/PingPongDelayContainer';
-
-import Phaser from './components/Phaser';
+import PhaserContainer from './containers/PhaserContainer';
 
 class App extends React.Component {
   state = {
@@ -35,7 +34,10 @@ class App extends React.Component {
     delaySpeed: 0,
     delayFeedback: 0.8,
     crusher: null,
-    phaser: null
+    phaser: null,
+    phaserOctaves: 0,
+    phaserFrequency: 2000,
+    phaserBaseFrequency: 2000
   };
 
   componentWillMount() {
@@ -59,7 +61,7 @@ class App extends React.Component {
   };
   returnRoomSizeReverbValue = (event, roomSize) => {
     this.setState({
-      reverbRoomSize: roomSize
+      reverbRoomSize: roomSize.toFixed(2)
     });
   };
   returnReverbFrequencyValue = (event, frequency) => {
@@ -67,6 +69,24 @@ class App extends React.Component {
       reverbFrequency: frequency
     });
   };
+
+  returnPhaserOctaves = (event, octaves) => {
+    this.setState({
+      phaserOctaves: octaves
+    });
+  };
+  returnPhaserFrequency = (event, frequency) => {
+    this.setState({
+      phaserFrequency: frequency
+    });
+  };
+  returnPhaserBaseFrequency = (event, baseFrequency) => {
+    this.setState({
+      phaserBaseFrequency: baseFrequency
+    });
+  };
+
+  returnPhaser;
 
   playSoundOnKeyboard = e => {
     const { sound, sound2, sound3 } = this.state;
@@ -233,7 +253,10 @@ class App extends React.Component {
       delay,
       phaser,
       delaySpeed,
-      delayFeedback
+      delayFeedback,
+      phaserOctaves,
+      phaserBaseFrequency,
+      phaserFrequency
     } = this.state;
 
     return (
@@ -242,7 +265,6 @@ class App extends React.Component {
           <Player sound={sound} reverb={reverb} delay={delay} phaser={phaser} />
         ) : null}
 
-        <Phaser getPhaser={this.getPhaser} />
         <div className="synth-logo">
           <div className="skrrt-animation">
             <Skrrrt />
@@ -265,6 +287,15 @@ class App extends React.Component {
             returnReverbFrequencyValue={this.returnReverbFrequencyValue}
             roomSize={reverbRoomSize}
             frequency={reverbFrequency}
+          />
+          <PhaserContainer
+            getPhaser={this.getPhaser}
+            returnPhaserOctaves={this.returnPhaserOctaves}
+            returnPhaserFrequency={this.returnPhaserFrequency}
+            returnPhaserBaseFrequency={this.returnPhaserBaseFrequency}
+            octaves={phaserOctaves}
+            frequency={phaserFrequency}
+            baseFrequency={phaserBaseFrequency}
           />
         </div>
         <div className="keys">
