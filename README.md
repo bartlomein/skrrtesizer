@@ -5,6 +5,9 @@ https://peaceful-fermat-80b4f5.netlify.com/
 This is a simple synth that right now does the "Skrrt" sound in one octave. Will implement tonejs to add other functionality and effects.
 
 
+Trello with updates and things to do:
+https://trello.com/b/zIEdxwuQ/skrrtesizer
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
