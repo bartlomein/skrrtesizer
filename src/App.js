@@ -264,7 +264,7 @@ class App extends React.Component {
         {sound !== null ? (
           <Player sound={sound} reverb={reverb} delay={delay} phaser={phaser} />
         ) : null}
-
+        <div className="flip-me-boo">FLiP mE oVeR tO LanDscApe</div>
         <div className="synth-logo">
           <div className="skrrt-animation">
             <Skrrrt />

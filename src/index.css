@@ -95,3 +95,31 @@ ul li:first-child {
 ul li:last-child {
   border-radius: 0 5px 5px 5px;
 }
+
+/*MEDIA QUERIES*/
+@media (max-width: 420px) {
+}
+@media screen and (orientation: portrait) {
+  .synth-logo,
+  .effect-line,
+  .keys {
+    display: none !important;
+  }
+}
+@media (min-width: 520px) {
+  .flip-me-boo {
+    display: none;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .flip-me-boo {
+    display: none;
+  }
+  .synth-logo {
+    display: none !important;
+  }
+  .set {
+    font-size: 12px;
+  }
+}
