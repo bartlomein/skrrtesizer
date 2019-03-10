@@ -306,72 +306,96 @@ class App extends React.Component {
                 data-key="65"
                 onMouseDown={() => this.playSound(F, 65)}
                 onMouseUp={() => this.onMouseRelease(65)}
+                onTouchStart={() => this.playSound(F, 65)}
+                onTouchEnd={() => this.onMouseRelease(65)}
               />
               <li
                 className="black fs key"
                 data-key="87"
                 onMouseDown={() => this.playSound(Fsharp, 87)}
                 onMouseUp={() => this.onMouseRelease(87)}
+                onTouchStart={() => this.playSound(Fsharp, 87)}
+                onTouchEnd={() => this.onMouseRelease(87)}
               />
               <li
                 className="white g key"
                 data-key="83"
                 onMouseDown={() => this.playSound(G, 83)}
                 onMouseUp={() => this.onMouseRelease(83)}
+                onTouchStart={() => this.playSound(G, 83)}
+                onTouchEnd={() => this.onMouseRelease(83)}
               />
               <li
                 className="black gs key"
                 data-key="69"
                 onMouseDown={() => this.playSound(Gsharp, 69)}
                 onMouseUp={() => this.onMouseRelease(69)}
+                onTouchStart={() => this.playSound(Gsharp, 69)}
+                onTouchEnd={() => this.onMouseRelease(69)}
               />
               <li
                 className="white a key"
                 data-key="68"
                 onMouseDown={() => this.playSound(A, 68)}
                 onMouseUp={() => this.onMouseRelease(68)}
+                onTouchStart={() => this.playSound(A, 68)}
+                onTouchEnd={() => this.onMouseRelease(68)}
               />
               <li
                 className="black as key"
                 data-key="82"
                 onMouseDown={() => this.playSound(Asharp, 82)}
                 onMouseUp={() => this.onMouseRelease(82)}
+                onTouchStart={() => this.playSound(Asharp, 82)}
+                onTouchEnd={() => this.onMouseRelease(82)}
               />
               <li
                 className="white b key f"
                 data-key="70"
                 onMouseDown={() => this.playSound(B, 70)}
                 onMouseUp={() => this.onMouseRelease(70)}
+                onTouchStart={() => this.playSound(B, 70)}
+                onTouchEnd={() => this.onMouseRelease(70)}
               />
               <li
                 className="white e key"
                 data-key="71"
                 onMouseDown={() => this.playSound(C, 71)}
                 onMouseUp={() => this.onMouseRelease(71)}
+                onTouchStart={() => this.playSound(C, 71)}
+                onTouchEnd={() => this.onMouseRelease(71)}
               />
               <li
                 className="black ds key"
                 data-key="89"
                 onMouseDown={() => this.playSound(Csharp, 89)}
                 onMouseUp={() => this.onMouseRelease(89)}
+                onTouchStart={() => this.playSound(Csharp, 89)}
+                onTouchEnd={() => this.onMouseRelease(89)}
               />
               <li
                 className="white d key"
                 data-key="72"
                 onMouseDown={() => this.playSound(D, 72)}
                 onMouseUp={() => this.onMouseRelease(72)}
+                onTouchStart={() => this.playSound(D, 72)}
+                onTouchEnd={() => this.onMouseRelease(72)}
               />
               <li
                 className="black cs key"
                 data-key="85"
                 onMouseDown={() => this.playSound(Dsharp, 85)}
                 onMouseUp={() => this.onMouseRelease(85)}
+                onTouchStart={() => this.playSound(Dsharp, 85)}
+                onTouchEnd={() => this.onMouseRelease(85)}
               />
               <li
                 className="white c key"
                 data-key="74"
                 onMouseDown={() => this.playSound(E, 74)}
                 onMouseUp={() => this.onMouseRelease(74)}
+                onTouchStart={() => this.playSound(E, 74)}
+                onTouchEnd={() => this.onMouseRelease(74)}
               />
             </ul>
           </div>

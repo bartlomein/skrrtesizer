@@ -62,7 +62,9 @@
 }
 
 /*EFFECT COMPONENTS*/
-
+.range-slider {
+  margin-top: 5px;
+}
 .first-effect-line {
   display: flex;
 }
@@ -75,6 +77,13 @@
   background: white;
   box-shadow: 10px 20px 20px gray;
 }
-
-.ping-pong-delay-component {
+.effect-property-name {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.effect-number-display {
+  font-size: 12px;
+}
+.slider-with-text {
+  margin-bottom: 3px;
 }

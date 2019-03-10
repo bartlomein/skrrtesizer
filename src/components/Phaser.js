@@ -15,9 +15,9 @@ export default class Phaser extends React.Component {
     return (
       <div className="reverb-effect-component effect-component">
         <div className="reverb-name effect-name">Phaser</div>
-        <div className="room-size-slider">
+        <div className="room-size-slider slider-with-text">
           <span className="effect-property-name">Octaves: </span>
-          <span className="reverb-room-size-display">{octaves}</span>
+          <span className="effect-number-display">{octaves}</span>
           <RangeSlider
             value={octaves}
             aria-labelledby="time"
@@ -27,9 +27,9 @@ export default class Phaser extends React.Component {
             step={1}
           />
         </div>
-        <div className="reverb-frequency-slider">
+        <div className="reverb-frequency-slider slider-with-text">
           <span className="effect-property-name">Frequency: </span>
-          <span className="reverb-room-size-display">{frequency}</span>
+          <span className="effect-number-display">{frequency}</span>
           <RangeSlider
             value={frequency}
             aria-labelledby="time"
@@ -39,9 +39,9 @@ export default class Phaser extends React.Component {
             step={50}
           />
         </div>
-        <div className="reverb-frequency-slider">
+        <div className="reverb-frequency-slider slider-with-text">
           <span className="effect-property-name">Base Frequency: </span>
-          <span className="reverb-room-size-display">{baseFrequency}</span>
+          <span className="effect-number-display">{baseFrequency}</span>
           <RangeSlider
             value={baseFrequency}
             aria-labelledby="time"

@@ -13,9 +13,9 @@ export default class PingPongDelay extends React.Component {
     return (
       <div className="ping-pong-delay-component effect-component">
         <div className="delay-name effect-name">Ping Pong Delay</div>
-        <div className="time-slider">
+        <div className="time-slider slider-with-text">
           <span className="effect-property-name">Time: </span>
-          <span className="ping-pong-time-display">{time}</span>
+          <span className="effect-number-display">{time}</span>
           <RangeSlider
             value={time}
             aria-labelledby="time"
@@ -26,9 +26,9 @@ export default class PingPongDelay extends React.Component {
           />
         </div>
 
-        <div className="feedback-slider">
+        <div className="feedback-slider slider-with-text">
           <span className="effect-property-name"> Feedback: </span>
-          <span className="ping-pong-feedback-display">{feedback}</span>
+          <span className="effect-number-display">{feedback}</span>
           <RangeSlider
             value={feedback}
             aria-labelledby="feedback"
