@@ -21,6 +21,7 @@ import ReverbContainer from './containers/ReverbContainer';
 import PingPongDelayContainer from './containers/PingPongDelayContainer';
 import PhaserContainer from './containers/PhaserContainer';
 import Tone from 'tone';
+import StartAudioContext from 'startaudiocontext';
 
 class App extends React.Component {
   state = {
@@ -57,6 +58,9 @@ class App extends React.Component {
     // let AudioContext = window.AudioContext || window.webkitAudioContext;
     // let context = new AudioContext();
     // Tone.setContext(context);
+    StartAudioContext(Tone.context, '.key').then(function() {
+      console.log('key');
+    });
   }
 
   returnDelayTimeValue = (event, time) => {
