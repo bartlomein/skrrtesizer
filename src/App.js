@@ -20,6 +20,7 @@ import Player from './components/Player';
 import ReverbContainer from './containers/ReverbContainer';
 import PingPongDelayContainer from './containers/PingPongDelayContainer';
 import PhaserContainer from './containers/PhaserContainer';
+import Tone from 'tone';
 
 class App extends React.Component {
   state = {
@@ -43,10 +44,20 @@ class App extends React.Component {
   componentWillMount() {
     window.addEventListener('keydown', this.playSoundOnKeyboard);
     window.addEventListener('keyup', this.removeTransition);
+    let AudioContext = window.AudioContext || window.webkitAudioContext;
+
+    let context = new AudioContext();
+    Tone.setContext(context);
   }
   componentWillUnmount() {
     window.removeEventListener('keydown');
     window.removeEventListener('keyup');
+  }
+  componentDidMount() {
+    let AudioContext = window.AudioContext || window.webkitAudioContext;
+
+    let context = new AudioContext();
+    Tone.setContext(context);
   }
 
   returnDelayTimeValue = (event, time) => {
